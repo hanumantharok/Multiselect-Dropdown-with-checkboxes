@@ -1,0 +1,25 @@
+// Formatter
+function ItemName(cellvalue, options, rowObject) {             
+    var MDB = '&lt;select id="ddlItemName' + options.rowId + '" multiple="multiple" style="width: 150px">&lt;/select>' 
+    return MDB;
+    }
+    
+    //Function
+    function FillItemName(ids, x) { 
+    PageMethods.FillProduct(onSucess, onFailure)
+    function onSucess(r) { 
+    jQuery('#ddltemType option').remove();    
+    $.each(r, function (index, data) { 
+    $('#ddlItemType' + ids + '').append('&lt;option value="' + data.ID_Proof + '">' + data.Id_Proof_Name + '&lt;/option>').multiselect("refresh");
+    $("#ddlItemType").multiselect("refresh");  
+    });    
+    $('#ddlItemType' + ids + '').val(x);  
+    }         
+    function onFailure(r) {  
+    alert(r._message);   
+    }          
+    return false;   
+    }
+
+
+Here i want to fetch the data from saved database.But i didnt get that. can any one help me with that.
